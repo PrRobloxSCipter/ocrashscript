@@ -1,9 +1,4 @@
-workspace.Obbies:Destroy()
-coroutine.wrap(function()
-for i,v in next, game.Players.LocalPlayer.PlayerGui:GetChildren() do
-  v:Destroy()
-end
-end)()
+
 -- place script in auto execute folder it server hop for more chance of crashing the server (rebooting it)
 -- CRASHER V1.4
 coroutine.wrap(function()
@@ -19,7 +14,7 @@ local JobId = game.JobId
 local PlaceId = game.PlaceId
 local Players = game:GetService("Players")
 local max = math.random(10, 20)
-local settings = 4 -- best
+local settings = 2 -- best
 
 for i = 1, 5 do
     -- Start
