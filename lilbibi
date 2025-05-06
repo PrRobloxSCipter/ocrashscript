@@ -8,7 +8,27 @@ local HttpService = game:GetService("HttpService")
 local JobId = game.JobId
 local PlaceId = game.PlaceId
 local Players = game:GetService("Players")
-local max = math.random(10, 19)
+local lp = game.Players.LocalPlayer
+local Def = "LeBotDeRoblox_"
+local max
+local min
+if lp.Name == Def.."1" then
+  max = 19
+  min = 17
+elseif lp.Name == Def.."2" then
+  max = 17
+  min = 14
+elseif lp.Name == Def.."3" then
+  max = 14
+  min = 12
+elseif lp.Name == Def.."4" then
+  max = 12
+  min = 10
+elseif lp.Name == Def.."7" then
+max = 19
+min = 10
+end
+--local max = math.random(10, 19)
 local settings = 4 -- best
 
 
@@ -71,7 +91,7 @@ for i = 1, 5 do
             
             if body and body.data then
                 for _, a in pairs(body.data) do
-                    if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and a.playing < a.maxPlayers and a.id ~= JobId then
+                    if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and min < max and a.id ~= JobId then
                         table.insert(servers, a.id)
                     end
                 end
