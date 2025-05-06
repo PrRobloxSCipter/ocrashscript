@@ -7,7 +7,7 @@ end)()
 -- CRASHER V1.4
 coroutine.wrap(function()
 for i = 1,5 do
-  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("BEWARE SERVER GONNA GET REBOOTED - TEAM HAXA")
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("BEWARE SERVER GONNA GET REBOOTED START LEAVING BEFORE LOSING PROGRESS - TEAM HAXA")
 end
 end)()
 task.wait()
