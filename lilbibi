@@ -16,6 +16,7 @@ local Players = game:GetService("Players")
 local max = math.random(10, 20)
 local settings = 2 -- best
 
+coroutine.wrap(function()
 for i = 1, 5 do
     -- Start
     for p, v in pairs(game:GetDescendants()) do
@@ -34,6 +35,7 @@ for i = 1, 5 do
             end
         end)()
     end
+end)()
     
     wait(settings)
     coroutine.wrap(function()
