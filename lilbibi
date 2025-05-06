@@ -1,3 +1,11 @@
+local namecall
+namecall = hookmetamethod(game,"__namecall",function(self,...)
+  if getnamecallmethod() == "Kick" and self == game.Players.LocalPlayer then
+game:GetService("TeleportService"):Teleport(game.PlaceId)
+   return nil
+end
+return namecall(self,...)
+end)
 
 -- place script in auto execute folder it server hop for more chance of crashing the server (rebooting it)
 -- CRASHER V1.4
