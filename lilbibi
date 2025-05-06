@@ -14,7 +14,7 @@ local JobId = game.JobId
 local PlaceId = game.PlaceId
 local Players = game:GetService("Players")
 local max = math.random(10, 20)
-local settings = 2 -- best
+local settings = 4 -- best
 
 
 for i = 1, 5 do
