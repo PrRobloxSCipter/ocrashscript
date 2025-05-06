@@ -1,10 +1,6 @@
 -- place script in auto execute folder it server hop for more chance of crashing the server (rebooting it)
--- CRASHER V1.4
-coroutine.wrap(function()
-for i = 1,5 do
-  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("BEWARE SERVER GONNA GET REBOOTED START LEAVING BEFORE LOSING PROGRESS - TEAM HAXA")
-end
-end)()
+-- CRASHER V2
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("SERVER REBOOTING FOR UPDATE WARNING JOIN gg/cBKaHEGptc - TEAM HAXA")
 task.wait()
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
 local TeleportService = game:GetService("TeleportService")
