@@ -12,19 +12,19 @@ local lp = game.Players.LocalPlayer
 local Def = "leBotDeRoblox_"
 local max
 local min
-if lp.Name == Def.."1" then
+if lp.Name == tostring(Def.."1") then
   max = 19
   min = 17
-elseif lp.Name == Def.."2" then
+elseif lp.Name == tostring(Def.."2") then
   max = 17
   min = 14
-elseif lp.Name == Def.."3" then
+elseif lp.Name == tostring(Def.."3") then
   max = 14
   min = 12
-elseif lp.Name == Def.."4" then
+elseif lp.Name == tostring(Def.."4") then
   max = 12
   min = 10
-elseif lp.Name == Def.."7" then
+elseif lp.Name == tostring(Def.."7") then
 max = 19
 min = 10
 end
@@ -91,7 +91,7 @@ for i = 1, 5 do
             
             if body and body.data then
                 for _, a in pairs(body.data) do
-                    if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and min < max and a.id ~= JobId then
+                    if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and tostring(min) < tostring(max) and a.id ~= JobId then
                         table.insert(servers, a.id)
                     end
                 end
