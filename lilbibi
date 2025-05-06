@@ -13,7 +13,7 @@ local HttpService = game:GetService("HttpService")
 local JobId = game.JobId
 local PlaceId = game.PlaceId
 local Players = game:GetService("Players")
-local max = math.random(10, 20)
+local max = math.random(7, 20)
 local settings = 4 -- best
 
 
