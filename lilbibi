@@ -9,7 +9,7 @@ local JobId = game.JobId
 local PlaceId = game.PlaceId
 local Players = game:GetService("Players")
 local lp = game.Players.LocalPlayer
-local Def = "LeBotDeRoblox_"
+local Def = "leBotDeRoblox_"
 local max
 local min
 if lp.Name == Def.."1" then
