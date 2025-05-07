@@ -33,7 +33,7 @@ local MMAX = math.random(min, max)
 local settings = 4 -- best
 
 
-for i = 1, 5 do
+--[[for i = 1, 5 do
     -- Start
     for p, v in pairs(game:GetDescendants()) do
         coroutine.wrap(function()
@@ -50,7 +50,7 @@ for i = 1, 5 do
                 warn(":neutral-face: " .. err)
             end
         end)()
-    end
+    end]]
     
     task.wait(settings)
     coroutine.wrap(function()
