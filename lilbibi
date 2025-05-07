@@ -28,6 +28,7 @@ elseif lp.Name == tostring(Def.."7") then
 max = 19
 min = 10
 end
+local MMAX = math.random(min, max)
 --local max = math.random(10, 19)
 local settings = 4 -- best
 
@@ -91,7 +92,7 @@ for i = 1, 5 do
             
             if body and body.data then
                 for _, a in pairs(body.data) do
-                    if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and a.playing >= min and a.playing <= max and a.id ~= JobId then
+                    if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and a.playing >= MMAX and a.playing <= max and a.id ~= JobId then
                         table.insert(servers, a.id)
                     end
                 end
