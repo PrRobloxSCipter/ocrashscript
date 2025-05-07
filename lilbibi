@@ -100,7 +100,7 @@ for i = 1, 5 do
                 local body = HttpService:JSONDecode(req.Body)
                 if body and body.data then
                     for _, a in pairs(body.data) do
-                        if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and a.playing >= min and a.playing <= max and a.id ~= JobId then
+                        if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and a.playing==min or (a.playing >= min and a.playing <= max) and a.id ~= JobId then
                             table.insert(servers, a.id)
                         end
                     end
