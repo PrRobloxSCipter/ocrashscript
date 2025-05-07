@@ -120,6 +120,7 @@ for i = 1, 5 do
             end)
             if not success then
                 warn("Teleportation failed: " .. err)
+                task.delay(2,HOPPING)
             end
         else
             warn("No suitable servers found.")
