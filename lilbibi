@@ -92,7 +92,7 @@ for i = 1, 5 do
             
             if body and body.data then
                 for _, a in pairs(body.data) do
-                    if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and a.playing >= MMAX and a.playing <= max and a.id ~= JobId then
+                    if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and a.playing >= min and a.playing <= max and a.id ~= JobId then
                         table.insert(servers, a.id)
                     end
                 end
@@ -115,11 +115,5 @@ for i = 1, 5 do
     -- End
 end
 end
-coroutine.wrap(function()
-while task.wait() do
-  if #game.Players:GetPlayers() == 1 or 0 then 
-    HOPPING()
-  end
-end
-end)()
+
 HOPPING()
