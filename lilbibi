@@ -80,40 +80,52 @@ for i = 1, 5 do
     end)()
     
     local function HOPPING()
-    -- credit to infinite yield for server hop script
     if httprequest then
         local servers = {}
-        local success, req = pcall(function()
-            return httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
-        end)
-        
-        if success and req then
-            local body = HttpService:JSONDecode(req.Body)
-            
-            if body and body.data then
-                for _, a in pairs(body.data) do
-                    if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and a.playing == MMAX and a.id ~= JobId then
-                        table.insert(servers, a.id)
+        local cursor = nil
+        local foundServer = false
+
+        repeat
+            local url = string.format(
+                "https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true%s",
+                PlaceId,
+                cursor and ("&cursor=" .. cursor) or ""
+            )
+
+            local success, req = pcall(function()
+                return httprequest({ Url = url })
+            end)
+
+            if success and req then
+                local body = HttpService:JSONDecode(req.Body)
+                if body and body.data then
+                    for _, a in pairs(body.data) do
+                        if type(a) == "table" and tonumber(a.playing) and tonumber(a.maxPlayers) and a.playing >= MMAX and a.playing <= max and a.id ~= JobId then
+                            table.insert(servers, a.id)
+                        end
                     end
                 end
+
+                cursor = body.nextPageCursor
+            else
+                warn("HTTP Request Error: " .. (req or "No response"))
+                break
             end
-        else
-            warn("error" .. (req or "No response"))
-        end
-        
+
+        until not cursor or #servers >= 50
+
         if #servers > 0 then
             local success, err = pcall(function()
                 TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], Players.LocalPlayer)
             end)
             if not success then
-                warn("failed teleport no httpsync :cold: : " .. err)
+                warn("Teleportation failed: " .. err)
             end
         else
-            warn("did u crashed all the server? :sweat-smile.")
+            warn("No suitable servers found.")
         end
     end
-    -- End
 end
-end
+
 
 HOPPING()
