@@ -123,6 +123,7 @@ local settings = 4 -- best
             end
         else
             warn("No suitable servers found.")
+            task.delay(4,HOPPING)
         end
     end
 end
