@@ -20,7 +20,7 @@ elseif lp.Name == tostring(Def.."2") then
   max = 17
   min = 14
 elseif lp.Name == tostring(Def.."3") then
-  max = 14
+  max = 15
   min = 12
 elseif lp.Name == tostring(Def.."4") then
   max = 12
