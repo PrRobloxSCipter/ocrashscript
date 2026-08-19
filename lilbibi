@@ -96,7 +96,7 @@ if plr.Name == lp.Name then
             },
             Body = HttpService:JSONEncode({
                 content = "@everyone " .. "Disconnected reconnecting soon...",
-                username = game.Players.LocalPlayer.Name
+                username = game.Players.LocalPlayer.Name .. " Down"
             })
         })
 
