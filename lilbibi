@@ -145,7 +145,7 @@ end
                 ["Content-Type"] = "application/json"
             },
             Body = HttpService:JSONEncode({
-                content = "@everyone " .. content,
+                content = "@everyone " .. content .. " ".. game.JobId,
                 username = game.Players.LocalPlayer.Name or "Crash Logger"
             })
         })
