@@ -27,7 +27,7 @@ elseif lp.Name == tostring(Def.."4") then
   min = 10
 elseif lp.Name == tostring(Def.."7") then
 max = 19
-min = 10
+min = 2
 end
 local MMAX = math.random(min, max)
 --local max = math.random(10, 19)
