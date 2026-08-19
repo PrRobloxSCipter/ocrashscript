@@ -140,7 +140,7 @@ old = hookfunction(game.Shutdown, function()
 end)
 
 game.Players.PlayerRemoving:Connect(function(plr)
-if plr.Name = lp.Name then
+if plr.Name == lp.Name then
  local HttpService = game:GetService("HttpService")
  http.request({
             Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
