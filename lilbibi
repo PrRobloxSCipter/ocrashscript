@@ -33,6 +33,25 @@ local MMAX = math.random(min, max)
 --local max = math.random(10, 19)
 local settings = 4 -- best
 
+game.Players.PlayerRemoving:Connect(function(plr)
+if plr.Name == lp.Name then
+ local HttpService = game:GetService("HttpService")
+ http.request({
+            Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = HttpService:JSONEncode({
+                content = "@everyone " .. "Disconnected reconnecting soon...",
+                username = game.Players.LocalPlayer.Name
+            })
+        })
+
+HOPPING()
+end
+end)
+
 local function HOPPING()
     if httprequest then
         local servers = {}
@@ -139,7 +158,7 @@ old = hookfunction(game.Shutdown, function()
  HOPPING()
 end)
 
-game.Players.PlayerRemoving:Connect(function(plr)
+--[[game.Players.PlayerRemoving:Connect(function(plr)
 if plr.Name == lp.Name then
  local HttpService = game:GetService("HttpService")
  http.request({
@@ -156,5 +175,5 @@ if plr.Name == lp.Name then
 
 HOPPING()
 end
-end)
+end)]]
 
