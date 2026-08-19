@@ -68,7 +68,7 @@ local function HOPPING()
                 break
             end
 
-        until not cursor or #servers >= 50
+        until not cursor or #servers >= 500
 
         if #servers > 0 then
             local success, err = pcall(function()
