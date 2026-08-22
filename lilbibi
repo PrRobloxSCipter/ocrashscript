@@ -3,10 +3,7 @@
 warn("water_hax")
 
 coroutine.wrap(function()
-for i = 1,2 do
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Tired of server reboot ?join gg/YyEyRh9WSa")
-task.wait(1)
-end
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Tired of server reboot ?")
 end)()
 
 task.wait()
