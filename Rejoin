@@ -5,9 +5,9 @@ local JobId = game.JobId
 local PlaceId = game.PlaceId
 local Players = game:GetService("Players")
 local lp = game.Players.LocalPlayer
+b=game:GetService("GuiService"):GetErrorCode()
 
 while task.wait() do
-b=game:GetService("GuiService"):GetErrorCode()
 if b ~= Enum.ConnectionError.OK then
 local HttpService = game:GetService("HttpService")
  http.request({
