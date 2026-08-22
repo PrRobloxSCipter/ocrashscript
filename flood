@@ -1,4 +1,4 @@
-getgenv().start false
+getgenv().start = false
 print("flood loaded")
 local Players = game.Players
 
