@@ -1,3 +1,11 @@
+local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+local TeleportService = game:GetService("TeleportService")
+local HttpService = game:GetService("HttpService")
+local JobId = game.JobId
+local PlaceId = game.PlaceId
+local Players = game:GetService("Players")
+local lp = game.Players.LocalPlayer
+
 while task.wait() do
 b=game:GetService("GuiService"):GetErrorCode()
 if b ~= Enum.ConnectionError.OK then
