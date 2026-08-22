@@ -1,5 +1,6 @@
 getgenv().start false
 print("flood loaded")
+local Players = game.Players
 
 local function Start()
 getgenv().start = true
