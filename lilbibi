@@ -130,7 +130,7 @@ end)()]]
 end]]
 
 while task.wait(1) do
-    if getgenv.start == true then
+    if getgenv().start == true then
     task.wait(settings)
     coroutine.wrap(function()
         local HttpService = game:GetService("HttpService")
