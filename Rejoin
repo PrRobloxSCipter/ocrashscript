@@ -5,11 +5,12 @@ local JobId = game.JobId
 local PlaceId = game.PlaceId
 local Players = game:GetService("Players")
 local lp = game.Players.LocalPlayer
-b=game:GetService("GuiService"):GetErrorCode()
+
 
 coroutine.wrap(function()
 while task.wait() do
 if b ~= Enum.ConnectionError.OK then
+b=game:GetService("GuiService"):GetErrorCode()
  http.request({
             Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
             Method = "POST",
