@@ -18,15 +18,16 @@ local PlaceId = game.PlaceId
 local Players = game:GetService("Players")
 local lp = game.Players.LocalPlayer
 local Def = "LeFrancaisScripter_"
+Def2 = "LeFrancaisScripter"
 local max
 local min
-if lp.Name == tostring(Def.."1") then
+if lp.Name == tostring(Def.."9") then
   max = 19
   min = 17
-elseif lp.Name == tostring(Def.."2") then
+elseif lp.Name == tostring(Def2.."10") then
   max = 17
   min = 14
-elseif lp.Name == tostring(Def.."3") then
+elseif lp.Name == tostring(Def.."8") then
   max = 15
   min = 12
 elseif lp.Name == tostring(Def.."4") then
