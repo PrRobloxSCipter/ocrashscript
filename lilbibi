@@ -24,7 +24,7 @@ local min
 if lp.Name == tostring(Def.."9") then
   max = 19
   min = 17
-elseif lp.Name == tostring(Def2.."10") then
+elseif lp.Name == tostring(Def.."0") then
   max = 17
   min = 14
 elseif lp.Name == tostring(Def.."8") then
