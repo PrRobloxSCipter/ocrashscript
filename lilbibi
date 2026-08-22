@@ -109,7 +109,7 @@ end
 end
 end)()]]
 
-for i = 1, 5 do
+--[[for i = 1, 5 do
     -- Start
     for p, v in pairs(game:GetDescendants()) do
         coroutine.wrap(function()
@@ -127,8 +127,10 @@ for i = 1, 5 do
             end
         end)()
     end
-end
-    
+end]]
+
+while task.wait(1) do
+    if getgenv.start == true then
     task.wait(settings)
     coroutine.wrap(function()
         local HttpService = game:GetService("HttpService")
@@ -158,4 +160,7 @@ end
 
 
 HOPPING()
+break
+end
+end
 
