@@ -7,6 +7,7 @@ local Players = game:GetService("Players")
 local lp = game.Players.LocalPlayer
 b=game:GetService("GuiService"):GetErrorCode()
 
+coroutine.wrap(function()
 while task.wait() do
 if b ~= Enum.ConnectionError.OK then
  http.request({
@@ -25,3 +26,4 @@ if b ~= Enum.ConnectionError.OK then
 	break
 end
 end
+end)()
