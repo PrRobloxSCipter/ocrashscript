@@ -86,7 +86,7 @@ getgenv().HOPPING = function()
     end
 end
 
-coroutine.wrap(function()
+--[[coroutine.wrap(function()
 	while task.wait() do
 b=game:GetService("GuiService"):GetErrorCode()
 if b ~= Enum.ConnectionError.OK then
@@ -107,7 +107,7 @@ local HttpService = game:GetService("HttpService")
 	break
 end
 end
-end)()
+end)()]]
 
 for i = 1, 5 do
     -- Start
