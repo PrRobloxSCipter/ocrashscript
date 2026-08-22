@@ -1,0 +1,20 @@
+while task.wait() do
+b=game:GetService("GuiService"):GetErrorCode()
+if b ~= Enum.ConnectionError.OK then
+local HttpService = game:GetService("HttpService")
+ http.request({
+            Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = HttpService:JSONEncode({
+                content = "@everyone " .. "Disconnected reconnecting soon...",
+                username = game.Players.LocalPlayer.Name .. " Down"
+            })
+        })
+	task.wait(2)
+	HOPPING()
+	break
+end
+end
