@@ -129,6 +129,7 @@ end)()]]
     end
 end]]
 
+coroutine.wrap(function()
 while task.wait(1) do
     if getgenv().start == true then
     task.wait(settings)
@@ -163,6 +164,6 @@ HOPPING()
 break
 end
 end
-
+end)()
 print("warn loaded")
 print(HOPPING)
