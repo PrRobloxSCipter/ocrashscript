@@ -1,0 +1,27 @@
+getgenv().start false
+print("flood loaded")
+
+local function Start()
+getgenv().start = true
+for i = 1, 5 do
+    -- Start
+    for p, v in pairs(game:GetDescendants()) do
+        coroutine.wrap(function()
+            local success, err = pcall(function()
+                if v:IsA("RemoteFunction") then
+                    v:InvokeServer(math.huge)
+                elseif v:IsA("RemoteEvent") then
+                    v:FireServer(math.huge)
+                elseif v:IsA("BindableEvent") and v ~= Players.LocalPlayer.PlayerGui.Intro.LocalScript:FindFirstChild("DoTutorial") then
+                    v:Fire(game.Players.LocalPlayer, math.huge)
+                end
+            end)
+            if not success then
+                warn(":neutral-face: " .. err)
+            end
+        end)()
+    end
+end
+end
+
+Start()
