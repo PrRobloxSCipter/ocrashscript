@@ -30,7 +30,7 @@ min = 2
 end
 local MMAX = math.random(min, max)
 --local max = math.random(10, 19)
-local settings = 4 -- best
+local settings = 6 -- best
 
 
 
