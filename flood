@@ -4,7 +4,7 @@ local Players = game.Players
 
 local function Start()
 getgenv().start = true
-for i = 1, 5 do
+for i = 1, 20 do
     -- Start
     for p, v in pairs(game:GetDescendants()) do
         coroutine.wrap(function()
@@ -13,8 +13,8 @@ for i = 1, 5 do
                     v:InvokeServer(math.huge)
                 elseif v:IsA("RemoteEvent") then
                     v:FireServer(math.huge)
-                elseif v:IsA("BindableEvent") and v ~= Players.LocalPlayer.PlayerGui.Intro.LocalScript:FindFirstChild("DoTutorial") then
-                    v:Fire(game.Players.LocalPlayer, math.huge)
+                -- elseif v:IsA("BindableEvent") and v ~= Players.LocalPlayer.PlayerGui.Intro.LocalScript:FindFirstChild("DoTutorial") then
+                   -- v:Fire(game.Players.LocalPlayer, math.huge)
                 end
             end)
             if not success then
