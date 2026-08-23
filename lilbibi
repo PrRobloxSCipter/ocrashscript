@@ -84,6 +84,25 @@ getgenv().HOPPING = function()
     end
 end
 
+for i,v in next, game:GetService("Players"):GetPlayers() do
+if v ~= lp then
+if string.find(v.Name,"LeFrancaisScripter_" then
+  HOPPING()
+local HttpService = game:GetService("HttpService")
+ http.request({
+            Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = HttpService:JSONEncode({
+                content = "@everyone " .. "Server Hopping Found" .. v.Name .. " In the same server.,
+                username = game.Players.LocalPlayer.Name .. " ServerHop"
+            })
+        })
+end
+end
+
 --[[coroutine.wrap(function()
 	while task.wait() do
 b=game:GetService("GuiService"):GetErrorCode()
