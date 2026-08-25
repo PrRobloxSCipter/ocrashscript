@@ -68,7 +68,7 @@ getgenv().HOPPING = function()
                 break
             end
 
-        until not cursor or #servers >= 500
+        until not cursor or #servers >= 100
 
         if #servers > 0 then
             local success, err = pcall(function()
