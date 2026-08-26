@@ -6,7 +6,7 @@ local function Start()
 getgenv().start = true
 for i = 1, 15 do
     -- Start
-    for p, v in pairs(game:GetDescendants()) do
+    for p, v in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
         coroutine.wrap(function()
             local success, err = pcall(function()
                 if v:IsA("RemoteFunction") then
