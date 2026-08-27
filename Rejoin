@@ -6,6 +6,7 @@ local PlaceId = game.PlaceId
 local Players = game:GetService("Players")
 local lp = game.Players.LocalPlayer
 
+
 coroutine.wrap(function()
 while task.wait() do
 b=game:GetService("GuiService"):GetErrorCode()
@@ -22,7 +23,7 @@ if b ~= Enum.ConnectionError.OK then
             })
         })
 	task.wait(2)
-	HOPPING()
+	ServerHop()
 	break
 end
 end
