@@ -31,9 +31,26 @@ print(lp.Name)
 local MMAX = math.random(min, max)
 --local max = math.random(10, 19)
 local settings = 5 -- best
+local Teleportation_Failed = 0
+local server_failed = false
 
 
 getgenv().ServerHop = function()
+coroutine.wrap(function()
+if server_failed then
+http.request({
+            Url = "https://discord.com/api/webhooks/1539253154519056496/1cKfkl5oDiqIeue7J5waVY20z6MpvVjle3d0QiaJbS-7YivEzNUN9sKqYEahbVi5nUwd",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = HttpService:JSONEncode({
+                content = "@everyone" .. "Teleportation Failed Reconnecting to a Recommended Server",
+                username = game.Players.LocalPlayer.Name .. " Teleportation Failed"
+            })
+        })
+end
+end)()
 local servers = {}
 	local req = game:HttpGet("https://games.roblox.com/v1/games/" .. PlaceId .. "/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true")
 	local body = HttpService:JSONDecode(req)
@@ -49,7 +66,9 @@ local servers = {}
 	if #servers > 0 then
 		TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], Players.LocalPlayer)
 	else
+        server_failed = false
 		warn("no server")
+        task.delay(4,ServerHop)
 	end
 end
 
@@ -98,6 +117,13 @@ getgenv().HOPPING = function()
                 task.delay(2,HOPPING)
             end
         else
+          Teleportation_Failed = Teleportation_Failed + 1
+          print("failed " .. Teleportation_Failed)
+           if Teleportation_Failed >= 15 then
+           server_failed = true
+            ServerHop()
+            return
+           end
             warn("No suitable servers found.")
             task.delay(4,HOPPING)
         end
