@@ -26,6 +26,9 @@ elseif lp.Name == tostring(Def.."4") then
 elseif lp.Name == tostring(Def.."7") then
 max = 19
 min = 6
+elseif lp.Name == tostring(Def.."5") then
+max = 17
+min = 10
 end
 print(lp.Name)
 local MMAX = math.random(min, max)
