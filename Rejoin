@@ -12,7 +12,7 @@ while task.wait() do
 b=game:GetService("GuiService"):GetErrorCode()
 if b ~= Enum.ConnectionError.OK then
  http.request({
-            Url = "https://discord.com/api/webhooks/1543043822349459518/zMqresOALhggceDZTI1CqUjkXXGKXIo9AsQROERbc-3SKvD1vuA86HJ6Ge8vHDMPpMjd",
+            Url = getgenv().BRUH,
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json"
