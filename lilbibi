@@ -45,7 +45,7 @@ getgenv().ServerHop = function()
 coroutine.wrap(function()
 if server_failed then
 http.request({
-            Url = "https://discord.com/api/webhooks/1543043822349459518/zMqresOALhggceDZTI1CqUjkXXGKXIo9AsQROERbc-3SKvD1vuA86HJ6Ge8vHDMPpMjd",
+            Url = BRUH,
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json"
@@ -143,7 +143,7 @@ if string.find(v.Name,"RobloxKnightBOT_") then
 coroutine.wrap(function()
 local HttpService = game:GetService("HttpService")
  http.request({
-            Url = "https://discord.com/api/webhooks/1543043822349459518/zMqresOALhggceDZTI1CqUjkXXGKXIo9AsQROERbc-3SKvD1vuA86HJ6Ge8vHDMPpMjd",
+            Url = BRUH,
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json"
@@ -166,7 +166,7 @@ b=game:GetService("GuiService"):GetErrorCode()
 if b ~= Enum.ConnectionError.OK then
 local HttpService = game:GetService("HttpService")
  http.request({
-            Url = "https://discord.com/api/webhooks/1543043822349459518/zMqresOALhggceDZTI1CqUjkXXGKXIo9AsQROERbc-3SKvD1vuA86HJ6Ge8vHDMPpMjd",
+            Url = BRUH,
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json"
@@ -221,7 +221,7 @@ while task.wait(1) do
         content = content .. "👥 Players: `" .. table.concat(players, ", ") .. "`"
     
         http.request({
-            Url = "https://discord.com/api/webhooks/1543043822349459518/zMqresOALhggceDZTI1CqUjkXXGKXIo9AsQROERbc-3SKvD1vuA86HJ6Ge8vHDMPpMjd",
+            Url = BRUH,
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json"
