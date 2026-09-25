@@ -166,8 +166,8 @@ end
 
 for i,v in next, Bots do
 --coroutine.wrap(function()
-if v ~= lp then
-if game.Players:FindFirstChild(v) then
+local un = game.Players:FindFirstChild(v)
+if un and un ~= lp then
 coroutine.wrap(function()
 local HttpService = game:GetService("HttpService")
  http.request({
@@ -183,7 +183,6 @@ local HttpService = game:GetService("HttpService")
         })
 end)()
 HOPPING()
-end
 end
 --end)()
 end
