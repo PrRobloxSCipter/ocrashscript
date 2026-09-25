@@ -163,10 +163,10 @@ getgenv().HOPPING = function()
     end
 end
 
-for i,v in next, game:GetService("Players"):GetPlayers() do
+for i,v in next, Bots do
 --coroutine.wrap(function()
 if v ~= lp then
-if string.find(v.Name,"RobloxKnightBOT_") then
+if game.Players:FindFirstChild(v) then
 coroutine.wrap(function()
 local HttpService = game:GetService("HttpService")
  http.request({
@@ -176,7 +176,7 @@ local HttpService = game:GetService("HttpService")
                 ["Content-Type"] = "application/json"
             },
             Body = HttpService:JSONEncode({
-                content = "@everyone " .. "Server Hopping Found" .. v.Name .. " In the same server.",
+                content = "@everyone " .. "Server Hopping Found " .. v .. " In the same server.",
                 username = game.Players.LocalPlayer.Name .. " ServerHop"
             })
         })
