@@ -12,9 +12,36 @@ local Players = game:GetService("Players")
 local lp = game.Players.LocalPlayer
 local Def = "RobloxKnightBOT_"
 Def2 = "LeFrancaisScripter"
+local Bots = {
+"Shadeylin93",
+"slowzlynx888",
+"driftxtornado",
+"ccipherux36",
+"ObbyCreatorAdmin0",
+"AccountValueRBLX"
+}
 local max
 local min
-if lp.Name == tostring(Def.."1") then
+if lp.Name == Bots[1] then
+  max = 19
+  min = 17
+elseif lp.Name == Bots[2] then
+  max = 16
+  min = 15
+elseif lp.Name == Bots[3] then
+  max = 14
+  min = 13
+elseif lp.Name == Bots[4] then
+  max = 13
+  min = 7
+elseif lp.Name == Bots[5] then
+max = 19
+min = 6
+elseif lp.Name == Bots[6] then
+max = 17
+min = 10
+end
+--[[if lp.Name == tostring(Def.."1") then
   max = 19
   min = 17
 elseif lp.Name == tostring(Def.."2") then
@@ -32,7 +59,7 @@ min = 6
 elseif lp.Name == tostring(Def.."9") then
 max = 17
 min = 10
-end
+end]]
 print(lp.Name)
 local MMAX = math.random(min, max)
 --local max = math.random(10, 19)
