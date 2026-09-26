@@ -183,6 +183,7 @@ local HttpService = game:GetService("HttpService")
         })
 end)()
 HOPPING()
+warn("nigger")
 end
 --end)()
 end
