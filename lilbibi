@@ -13,12 +13,12 @@ local lp = game.Players.LocalPlayer
 local Def = "RobloxKnightBOT_"
 Def2 = "LeFrancaisScripter"
 local Bots = {
-"Shadeylin93",
-"slowzlynx888",
-"driftxtornado",
-"ccipherux36",
-"ObbyCreatorAdmin0",
-"BestBuildBattle"
+"Shadeylin93", -- 1
+"slowzlynx888", -- 2
+"driftxtornado", -- 3
+"ccipherux36", -- 4
+"ObbyCreatorAdmin0", -- 5
+"BestBuildBattle" -- 6
 }
 local max
 local min
