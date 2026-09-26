@@ -41,7 +41,10 @@ elseif lp.Name == Bots[6] then
 max = 17
 min = 10
 end
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,9e9,0)
+if lp.Character:FindFirstChild("HumanoidRootPart") then
+   lp.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(0,9e9,0)
+end
+print("ndd")
 --[[if lp.Name == tostring(Def.."1") then
   max = 19
   min = 17
